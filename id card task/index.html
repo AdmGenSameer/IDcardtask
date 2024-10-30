@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <div class="id-card">
+        <button class="edit-btn">Edit Profile</button>
+        <div class="left-section">
+            <div class="profile-pic-container">
+                <div class="profile-pic">
+                    <img src="profile.jpeg" alt="Profile Picture">
+                </div>
+            </div>
+            <div class="social-icons">
+                <div class="social-icon" onclick="window.open('https://facebook.com', '_blank')">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="social-icon" onclick="window.open('https://linkedin.com', '_blank')">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="social-icon" onclick="window.open('https://instagram.com', '_blank')">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="details">
+                <h2>Sameer</h2>
+                <p><i class="fas fa-id-card"></i> Registration: 23BCE11241</p>
+                <p><i class="fas fa-code-branch"></i> Branch: Computer Science</p>
+                <p><i class="fas fa-envelope"></i> Email: Sameer@gamil.com</p>
+                <p><i class="fas fa-phone"></i> Contact: +9125455563564</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click handler for edit button
+        document.querySelector('.edit-btn').addEventListener('click', () => {
+            alert('Edit profile functionality can be implemented here!');
+        });
+
+        // Add hover effect for profile picture
+        const profilePic = document.querySelector('.profile-pic');
+        profilePic.addEventListener('mouseover', () => {
+            profilePic.style.transform = 'scale(1.05)';
+        });
+        profilePic.addEventListener('mouseout', () => {
+            profilePic.style.transform = 'scale(1)';
+        });
+
+        // Add click handlers for social media icons
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.target.closest('.social-icon').style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    e.target.closest('.social-icon').style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
